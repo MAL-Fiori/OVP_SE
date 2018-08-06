@@ -1,0 +1,195 @@
+{
+	"_version": "1.7.0",
+	"start_url": "start.html",
+	"sap.app": {
+		"id": "cis.lam.ZSQRMBWA_OVP_SER_ENG",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{app_title}}",
+		"description": "{{app_description}}",
+		"dataSources": {
+			"ZSQRMBWA_OVP_SE_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSQRMBWA_OVP_SE_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"ZSQRMBWA_OVP_SE_SRV_VAN",
+						"annotation1"
+					],
+					"localUri": "localService/ZSQRMBWA_OVP_SE_SRV/metadata.xml"
+				}
+			},
+			"ZSQRMBWA_OVP_SE_SRV_VAN": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZSQRMBWA_OVP_SE_SRV_VAN',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZSQRMBWA_OVP_SE_SRV/ZSQRMBWA_OVP_SE_SRV_VAN.xml"
+				}
+			},
+			"annotation1": {
+				"type": "ODataAnnotation",
+				"uri": "localService/ZSQRMBWA_OVP_SE_SRV/annotation1.xml",
+				"settings": {
+					"localUri": "localService/ZSQRMBWA_OVP_SE_SRV/annotation1.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "${sap.ui5.dist.version}",
+			"libs": {
+				"sap.ovp": {}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"preload": true,
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"ZSQRMBWA_OVP_SE_SRV": {
+				"dataSource": "ZSQRMBWA_OVP_SE_SRV",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.ovp.app.Main": {
+						"controllerName": "cis.lam.ZSQRMBWA_OVP_SER_ENG.controller.customMain"
+					}
+				},
+				"sap.ui.viewExtensions": {
+					"sap.ovp.app.Main": {
+						"SmartFilterBarControlConfigurationExtension|GlobalFilters": {
+							"className": "sap.ui.core.Fragment",
+							"fragmentName": "cis.lam.ZSQRMBWA_OVP_SER_ENG.fragments.customfilters",
+							"type": "XML"
+						}
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "ZSQRMBWA_OVP_SE_SRV",
+		"globalFilterEntityType": "ZWM_SUP_ENG_OVPType",
+		"containerLayout": "resizable",
+		"enableLiveFilter": true,
+		"useDateRangeType": true,
+		"considerAnalyticalParameters": false,
+		"cards": {
+			"card00": {
+				"model": "ZSQRMBWA_OVP_SE_SRV",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card02_1_title}}",
+					"entitySet": "ZWM_SUP_ENG_OVP",
+					"addODataSelect": true,
+					"customParams": "getParameters",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#Chart-Navigation",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#By-Score",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Sort_By_Score"
+				}
+			},
+			"card01": {
+				"model": "ZSQRMBWA_OVP_SE_SRV",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card02_2_title}}",
+					"entitySet": "ZWM_SUP_ENG_OVP",
+					"addODataSelect": true,
+					"customParams": "getParameters",
+					"value": "By Status",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#Chart-Navigation",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#By-Status",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Sort_By_Status"
+				}
+			},
+			"card02": {
+				"model": "ZSQRMBWA_OVP_SE_SRV",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card00_title}}",
+					"sortBy": "ScoreId",
+					"entitySet": "ZWM_SUP_ENG_OVP",
+					"customParams": "getParameters",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#Chart-Navigation",
+					"chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#Column-Chart-Stacked",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#default-input",
+					"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#Chart_Sort"
+				}
+			},
+			"card03": {
+				"template": "sap.ovp.cards.linklist",
+				"settings": {
+					"title": "Quick Links",
+					"listFlavor": "standard",
+					"staticContent": [
+						{
+							"title": "New Inspection",
+							"semanticObject": "ZSQRMBWA",
+							"imageUri": "sap-icon://add-document",
+							"action": "showApplication&/mainBoard/text",
+							"openInNewWindow": false
+						},
+						{
+							"title": "List of Findings",
+							"semanticObject": "ZSQRMBWA",
+							"action": "showApplication",
+							"imageUri": "sap-icon://clinical-tast-tracker",
+							"openInNewWindow": false
+						}
+					]
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zsqrmbwa_ovp_se/webapp",
+		"_version": "1.1.0"
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

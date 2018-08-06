@@ -1,0 +1,67 @@
+{
+  "projectType": [
+    "sap.watt.uitools.ide.fiori",
+    "com.watt.common.builder.sapui5clientbuild"
+  ],
+  "build": {
+    "targetFolder": "dist",
+    "sourceFolder": "webapp",
+    "excludedFolders": [
+      "test"
+    ],
+    "buildRequired": false,
+    "lastBuildDateTime": "Mon, 06 Aug 2018 10:52:32 GMT"
+  },
+  "generation": [
+    {
+      "templateId": "OVP.smartovptemplate",
+      "templateVersion": "1.41.1",
+      "dateTimeStamp": "Mon, 04 Jun 2018 10:24:15 GMT"
+    },
+    {
+      "templateId": "OVP.cardtemplate",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Wed, 06 Jun 2018 04:19:40 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Wed, 20 Jun 2018 09:43:16 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZSQRMBWA_SRV",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "basevalidator": {
+    "services": {
+      "xml": "fioriXmlAnalysis",
+      "js": "fioriJsValidator"
+    }
+  },
+  "codeCheckingTriggers": {
+    "notifyBeforePush": true,
+    "notifyBeforePushLevel": "Error",
+    "blockPush": false,
+    "blockPushLevel": "Error"
+  },
+  "deploy": {
+    "destination": "GWD",
+    "name": "ZSQRMBWA_OVP_SE"
+  },
+  "hcpdeploy": {
+    "account": "d7c7dfdf7",
+    "name": "zsqrmbwa1ovp1se",
+    "lastVersionWeTriedToDeploy": "1.0.0"
+  }
+}

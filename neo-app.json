@@ -1,0 +1,33 @@
+{
+  "welcomeFile": "index.html",
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "GWD",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "GWD"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "preferLocal": true,
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ]
+}

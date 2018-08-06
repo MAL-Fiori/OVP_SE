@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core">
+	<smartfilterbar:ControlConfiguration groupId="GlobalFilters" key="total" label="Supplier"
+		visibleInAdvancedArea="false">
+		<!--<smartfilterbar:customControl>-->
+		<!--	<ComboBox items="{ZSQRMBWA_SRV>/Suppliers}"></ComboBox>-->
+		<!--</smartfilterbar:customControl>-->
+	</smartfilterbar:ControlConfiguration>	
+	<!-- Product ID Filter -->
+	<!--<smartfilterbar:ControlConfiguration groupId="_BASIC" key="EngineerId" label="Supplier Engineer (Only for Managers)"-->
+	<!--	visibleInAdvancedArea="true">-->
+	<!--	<smartfilterbar:customControl>-->
+	<!--		<Input id="EngineerId" type="Text"/>-->
+	<!--	</smartfilterbar:customControl>-->
+	<!--</smartfilterbar:ControlConfiguration>-->
+	<!--<smartfilterbar:ControlConfiguration groupId="GlobalFilters" key="Commodity" label="Commodity (Only for Executives)"-->
+	<!--	visibleInAdvancedArea="false">-->
+	<!--	<smartfilterbar:customControl>-->
+	<!--		<Input id="Commodity" type="Text"/>-->
+	<!--	</smartfilterbar:customControl>-->
+	<!--</smartfilterbar:ControlConfiguration>-->
+</core:FragmentDefinition>

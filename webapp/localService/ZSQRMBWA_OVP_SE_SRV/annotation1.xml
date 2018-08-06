@@ -1,0 +1,154 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/cs02/vocabularies/Org.OData.Aggregation.V1.xml">
+		<edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+		<edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470971/Communication.xml?api=v2">
+		<edmx:Include Alias="vCard" Namespace="com.sap.vocabularies.Communication.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/vocabularies/Org.OData.Measures.V1.xml">
+		<edmx:Include Alias="CQP" Namespace="Org.OData.Measures.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType">
+				<Annotation Term="UI.Chart" Qualifier="Column-Chart-Stacked">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>total</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="total"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>Score</PropertyPath>
+								<PropertyPath>StatusId</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="Score"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Series"/>
+								</Record>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="StatusId"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Actions"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="Chart-Navigation">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue String="ZSQRMBWA" Property="SemanticObject"/>
+							<PropertyValue String="showApplication" Property="Action"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="By-Score">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Supplier"/>
+							<PropertyValue Property="Value" Path="SupplierId"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Score"/>
+							<PropertyValue Property="Value" Path="Score"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Count"/>
+							<PropertyValue Property="Value" Path="total"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem" Qualifier="By-Status">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Supplier"/>
+							<PropertyValue Property="Value" Path="SupplierId"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Status"/>
+							<PropertyValue Property="Value" Path="StatusId"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Count"/>
+							<PropertyValue Property="Value" Path="total"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="Sort_By_Status">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="Status"/>
+									<PropertyValue Property="Descending" Boolean="true"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="total"/>
+									<PropertyValue Property="Descending" Boolean="true"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="Sort_By_Score">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="Score"/>
+									<PropertyValue Property="Descending" Boolean="true"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="total"/>
+									<PropertyValue Property="Descending" Boolean="true"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="com.sap.vocabularies.UI.v1.PresentationVariant" Qualifier="Chart_Sort">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="Score"/>
+									<PropertyValue Property="Descending" Boolean="true"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType/StatusId">
+				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Status"/>
+				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextOnly"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
