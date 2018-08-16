@@ -23,6 +23,15 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
 			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType">
+				<!--Filters are from below annotations-->
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>SupplierId</PropertyPath>
+						<PropertyPath>InspectionDate</PropertyPath>
+						<PropertyPath>StatusId</PropertyPath>
+						<PropertyPath>ScoreId</PropertyPath>
+					</Collection>
+				</Annotation>
 				<Annotation Term="UI.Chart" Qualifier="Column-Chart-Stacked">
 					<Record Type="UI.ChartDefinitionType">
 						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/ColumnStacked"/>
@@ -41,14 +50,14 @@
 						</PropertyValue>
 						<PropertyValue Property="Dimensions">
 							<Collection>
-								<PropertyPath>Score</PropertyPath>
+								<PropertyPath>ScoreId</PropertyPath>
 								<PropertyPath>StatusId</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="DimensionAttributes">
 							<Collection>
 								<Record Type="UI.ChartDimensionAttributeType">
-									<PropertyValue Property="Dimension" PropertyPath="Score"/>
+									<PropertyValue Property="Dimension" PropertyPath="ScoreId"/>
 									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Series"/>
 								</Record>
 								<Record Type="UI.ChartDimensionAttributeType">
@@ -65,7 +74,20 @@
 						<Record Type="UI.DataFieldForIntentBasedNavigation">
 							<PropertyValue String="ZSQRMBWA" Property="SemanticObject"/>
 							<PropertyValue String="showApplication" Property="Action"/>
+							<PropertyValue Property="RequiresContext" Bool="true"/>
 						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Label" String="Status"/>
+							<PropertyValue Property="Value" Path="StatusId"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Label" String="Score"/>
+							<PropertyValue Property="Value" Path="ScoreId"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Label" String="Date"/>
+							<PropertyValue Property="Value" Path="InspectionDate"/>
+						</Record>						
 					</Collection>
 				</Annotation>
 				<Annotation Term="UI.LineItem" Qualifier="By-Score">
@@ -76,7 +98,7 @@
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Label" String="Score"/>
-							<PropertyValue Property="Value" Path="Score"/>
+							<PropertyValue Property="Value" Path="ScoreId"/>
 						</Record>
 						<Record Type="UI.DataField">
 							<PropertyValue Property="Label" String="Count"/>
@@ -145,9 +167,17 @@
 					</Record>
 				</Annotation>
 			</Annotations>
+			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType/ScoreId">
+				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Score"/>
+				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
+			</Annotations>
 			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType/StatusId">
 				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Status"/>
-				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextOnly"/>
+				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
+			</Annotations>
+			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType/SupplierId">
+				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Supplier"/>
+				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
 			</Annotations>
 		</Schema>
 	</edmx:DataServices>

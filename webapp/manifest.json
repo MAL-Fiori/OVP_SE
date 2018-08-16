@@ -16,24 +16,16 @@
 				"type": "OData",
 				"settings": {
 					"annotations": [
-						"ZSQRMBWA_OVP_SE_SRV_VAN",
-						"annotation1"
+						"annotation"
 					],
 					"localUri": "localService/ZSQRMBWA_OVP_SE_SRV/metadata.xml"
 				}
 			},
-			"ZSQRMBWA_OVP_SE_SRV_VAN": {
-				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZSQRMBWA_OVP_SE_SRV_VAN',Version='0001')/$value/",
+			"annotation": {
+				"uri": "localService/ZSQRMBWA_OVP_SE_SRV/annotation.xml",
 				"type": "ODataAnnotation",
 				"settings": {
-					"localUri": "localService/ZSQRMBWA_OVP_SE_SRV/ZSQRMBWA_OVP_SE_SRV_VAN.xml"
-				}
-			},
-			"annotation1": {
-				"type": "ODataAnnotation",
-				"uri": "localService/ZSQRMBWA_OVP_SE_SRV/annotation1.xml",
-				"settings": {
-					"localUri": "localService/ZSQRMBWA_OVP_SE_SRV/annotation1.xml"
+					"localUri": "localService/ZSQRMBWA_OVP_SE_SRV/annotation.xml"
 				}
 			}
 		},

@@ -10,7 +10,7 @@
       "test"
     ],
     "buildRequired": false,
-    "lastBuildDateTime": "Mon, 06 Aug 2018 10:52:32 GMT"
+    "lastBuildDateTime": "Tue, 07 Aug 2018 10:32:31 GMT"
   },
   "generation": [
     {
@@ -62,6 +62,7 @@
   "hcpdeploy": {
     "account": "d7c7dfdf7",
     "name": "zsqrmbwa1ovp1se",
-    "lastVersionWeTriedToDeploy": "1.0.0"
+    "lastVersionWeTriedToDeploy": "1.0.0",
+    "entryPath": "webapp"
   }
 }
