@@ -5,6 +5,13 @@ sap.ui.define([
 ], function(Controller, Filter, FilterOperator) {
 	"use strict";
 	return Controller.extend("cis.lam.ZSQRMBWA_OVP_SER_ENG.controller.customMain", {
+		
+		onBeforeRendering: function(){
+			var sample = 1;	
+		},
+		onAfterRendering: function(){
+			var sample = 1;	
+		},
 		getCustomFilters: function() {
 
 			var oValue1 = this.oView.byId("EngineerId").getValue();
