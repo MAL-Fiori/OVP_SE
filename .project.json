@@ -9,8 +9,8 @@
     "excludedFolders": [
       "test"
     ],
-    "buildRequired": false,
-    "lastBuildDateTime": "Wed, 22 Aug 2018 05:16:22 GMT"
+    "buildRequired": true,
+    "lastBuildDateTime": "Fri, 24 Aug 2018 10:47:36 GMT"
   },
   "generation": [
     {

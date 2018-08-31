@@ -1,6 +1,24 @@
 {
   "run": [
     {
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 2036107,
+        "runnerId": "webapprunner",
+        "displayName": "Run index.html",
+        "lastRunTimeStamp": 1535707631647
+      }
+    },
+    {
       "filePath": "/webapp/Component.js",
       "previewMode": 0,
       "dataMode": 1,
@@ -15,7 +33,7 @@
         "id": 3227504,
         "runnerId": "fiorirunner",
         "displayName": "Run Component.js",
-        "lastRunTimeStamp": 1534914779761
+        "lastRunTimeStamp": 1535696917924
       }
     },
     {
@@ -34,24 +52,6 @@
         "runnerId": "webapprunner",
         "displayName": "Run testOVP.html",
         "lastRunTimeStamp": 1529489982678
-      }
-    },
-    {
-      "filePath": "/webapp/index.html",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": null,
-      "ui5VerSource": null,
-      "isDefaultVersion": 0,
-      "urlParameters": [],
-      "hashParameter": "",
-      "backendSystem": [],
-      "_metadata": {
-        "id": 2036107,
-        "runnerId": "webapprunner",
-        "displayName": "Run index.html",
-        "lastRunTimeStamp": 1528181394304
       }
     }
   ]

@@ -23,6 +23,13 @@
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
 			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType">
+<!-- Can be used in future for coloring stacked chart
+				<Annotation Term="UI.DataPoint">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="ScoreId"/>
+						<PropertyValue Property="Criticality" Path="Criticality"/>
+					</Record>
+				</Annotation>-->
 				<!--Filters are from below annotations-->
 				<Annotation Term="UI.SelectionFields">
 					<Collection>
@@ -52,6 +59,7 @@
 							<Collection>
 								<PropertyPath>ScoreId</PropertyPath>
 								<PropertyPath>StatusId</PropertyPath>
+								<PropertyPath>Criticality</PropertyPath>
 							</Collection>
 						</PropertyValue>
 						<PropertyValue Property="DimensionAttributes">
@@ -87,7 +95,7 @@
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Label" String="Date"/>
 							<PropertyValue Property="Value" Path="InspectionDate"/>
-						</Record>						
+						</Record>
 					</Collection>
 				</Annotation>
 				<Annotation Term="UI.LineItem" Qualifier="By-Score">
@@ -167,6 +175,18 @@
 					</Record>
 				</Annotation>
 			</Annotations>
+			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUPPLIER_VHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="lifnr"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="name1"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
 			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType/ScoreId">
 				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Score"/>
 				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
@@ -176,9 +196,39 @@
 				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
 			</Annotations>
 			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType/SupplierId">
+				<Annotation Term="Common.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Supplier Value Help"/>
+						<PropertyValue Property="CollectionPath" String="ZWM_SUPPLIER_VH"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="SupplierId"/>
+									<PropertyValue Property="ValueListProperty" String="lifnr"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="name1"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="SupplierCategory"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="stras"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="land1"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="telephoneNumber"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
 				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Supplier"/>
 				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
-			</Annotations>
+			</Annotations>			
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

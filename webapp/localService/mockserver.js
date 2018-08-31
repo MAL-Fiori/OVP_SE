@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(MockServer) {
 	"use strict";
 	var oMockServer,
-		_sAppModulePath = "cis.lam.ZSQRMBWA_OVP_SER_ENG/";
+		_sAppModulePath = "cis.lam.ZSQRMBWA_OVP_SE/";
 
 	return {
 		/**

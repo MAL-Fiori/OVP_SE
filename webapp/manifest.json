@@ -2,7 +2,7 @@
 	"_version": "1.7.0",
 	"start_url": "start.html",
 	"sap.app": {
-		"id": "cis.lam.ZSQRMBWA_OVP_SER_ENG",
+		"id": "cis.lam.ZSQRMBWA_OVP_SE",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -83,14 +83,14 @@
 			"extensions": {
 				"sap.ui.controllerExtensions": {
 					"sap.ovp.app.Main": {
-						"controllerName": "cis.lam.ZSQRMBWA_OVP_SER_ENG.controller.customMain"
+						"controllerName": "cis.lam.ZSQRMBWA_OVP_SE.controller.customMain"
 					}
 				},
 				"sap.ui.viewExtensions": {
 					"sap.ovp.app.Main": {
 						"SmartFilterBarControlConfigurationExtension|GlobalFilters": {
 							"className": "sap.ui.core.Fragment",
-							"fragmentName": "cis.lam.ZSQRMBWA_OVP_SER_ENG.fragments.customfilters",
+							"fragmentName": "cis.lam.ZSQRMBWA_OVP_SE.fragments.customfilters",
 							"type": "XML"
 						}
 					}
@@ -109,6 +109,7 @@
 		"enableLiveFilter": true,
 		"useDateRangeType": true,
 		"considerAnalyticalParameters": false,
+		"showDateInRelativeFormat": true,
 		"cards": {
 			"card00": {
 				"model": "ZSQRMBWA_OVP_SE_SRV",
