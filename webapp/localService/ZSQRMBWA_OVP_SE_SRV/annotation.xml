@@ -175,18 +175,6 @@
 					</Record>
 				</Annotation>
 			</Annotations>
-			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUPPLIER_VHType">
-				<Annotation Term="UI.LineItem">
-					<Collection>
-						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="lifnr"/>
-						</Record>
-						<Record Type="UI.DataField">
-							<PropertyValue Property="Value" Path="name1"/>
-						</Record>
-					</Collection>
-				</Annotation>
-			</Annotations>
 			<Annotations Target="ZSQRMBWA_OVP_SE_SRV.ZWM_SUP_ENG_OVPType/ScoreId">
 				<Annotation Term="com.sap.vocabularies.Common.v1.Text" Path="Score"/>
 				<Annotation Term="com.sap.vocabularies.UI.v1.TextArrangement" EnumMember="com.sap.vocabularies.UI.v1.TextArrangementType/TextLast"/>
